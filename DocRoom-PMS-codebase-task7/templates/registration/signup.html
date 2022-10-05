@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h2>Sign Up</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            <button type="submit">Sign Up</button>
+        </form>
+        <br>
+
+        <!-- White Code -->
+        <a href="{% url 'login' %}">Log In</a>
+        <!-- White Code -->
+
+    </body>
+</html>
