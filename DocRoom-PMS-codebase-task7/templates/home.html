@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>Welcome to the patient management system!</h1>
+        <a href="{% url 'add_patient' %}">Add new patients</a>
+        <br>
+
+        <h2>Search for patient:</h2>
+        <form action="display/" method="GET">
+            {% csrf_token %}
+            {{ search_form.as_p }}
+            <input type ="submit" value="Search">
+        </form>
+
+        <br>
+        <br>
+
+        <h3>Send Email to Patients:</h3>
+        {% if patients_not_sent_email %}
+            <table>
+                {% for p in patients_not_sent_email %}
+                <tr>
+                    <td>{{ p.firstname }}</td>
+                    <td>{{ p.lastname }}</td>
+                    <td>{{ p.upcoming_appointment }}</td>
+                    <td><a href="mail/{{ p.id }}">Send Email</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>The appropriate patients have been sent an email</p>
+        {% endif %}
+
+        <br>
+        <br>
+
+        <!-- White Code -->
+        <a href="{% url 'logout' %}">Log Out</a>
+        <!-- White Code -->
+
+    </body>
+</html>
