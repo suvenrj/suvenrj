@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @suvenrj
 - 👀 I’m interested in ...
-- 🌱 I’m currently learning ...Flutter
+- 🌱 I’m currently learning ...Algorithms
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...suvenjagtiani@gmail.com
 
